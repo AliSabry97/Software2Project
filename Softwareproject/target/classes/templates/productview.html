@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome in store owner page</title>
+</head>
+<body>
+	
+	<table border=1px>
+		<tr>
+			<th>Product Name</th>
+			<th>Product Price</th>
+			<th>Product category</th>
+			<th>Product brandname</th>
+		
+		</tr>	
+		<tr th:each="product :${products}">
+			<td th:text="${product.name}"></td>
+			<td th:text="${product.price}">></td>
+			<td th:text="${product.category}">></td>
+			<td th:text="${product.brandname}">></td>
+		
+		</tr>	
+	
+	
+	</table>
+
+</body>
+</html>

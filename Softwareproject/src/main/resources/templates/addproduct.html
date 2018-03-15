@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>AddProduct</title>
+<style>
+body {
+background-color:#333;
+}
+
+h2
+{
+  font-size: 36px;
+  color: black;
+  font-family: cursive;
+  padding:0px;
+}
+
+#signUp {
+	width:270px;
+	margin:0 auto;
+	margin-top:150px;
+  background-color: white;
+  padding: 50px;
+    border: solid  1px white;
+    border-radius: 20px 20px 20px 20px;
+   
+}
+#signUp {
+	font-size:18px
+
+}
+#signUp label
+{
+
+  color: black;
+  font-family: cursive;
+}
+#signUp input {
+
+  margin: 0 auto;
+	margin-top:20px;
+	margin-bottom:10px;
+	border:1px solid #ccc;
+	background:rgba(225,225,225,1.00);
+	padding:4px 10px;
+	width:100%;
+	height:34px;
+    border: solid  1px white;
+    border-radius: 20px 20px 20px 20px;
+     
+}
+#signUp input[type="submit"] {
+	background:#368;
+	color:white;
+	font-family:tahoma;
+	font-weight:bold;
+
+}
+
+
+</style>
+</head>
+<body>
+<form id="signUpForm" method="post" th:action="@{/addproduct}" th:object="${product}"   >
+<div id="signUp">
+	<h2>AddProduct</h2>
+
+	<label>	Product Name:</label><input type="text" th:field="*{name}"  placeholder="Enter product Name .." />
+	<br></br>
+    <label>  Product Price:</label><input type="text"  th:field="*{price}" placeholder="Enter product price.." />
+    <br></br>
+    
+     <label>  Product category:</label><input type="text" th:field="*{category}"  placeholder="Enter product category.." />
+    <br></br>
+     <label>  Product brandname:</label><input type="text"  th:field="*{brandname}"  placeholder="Enter product brandname.." />
+    <br></br>
+
+    <input  type="submit" value="Add Product"/>
+    <br></br>
+
+</div>
+
+ </form>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Add Store</title>
+<style type="">
+
+body {
+background-color:#333;
+}
+
+h2
+{
+  font-size: 36px;
+  color: black;
+  font-family: cursive;
+  
+ 
+}
+
+#signUp {
+	width:270px;
+	margin:0 auto;
+	margin-top:80px;
+  background-color: white;
+  padding: 50px;
+    border: solid  1px white;
+    border-radius: 20px 20px 20px 20px;
+   
+}
+#signUp {
+	font-size:18px
+
+}
+#signUp label
+{
+
+  color: black;
+  font-family: cursive;
+}
+#signUp input {
+
+  margin: 0 auto;
+	margin-top:20px;
+	margin-bottom:10px;
+	border:1px solid #ccc;
+	background:rgba(225,225,225,1.00);
+	padding:4px 10px;
+	width:100%;
+	height:34px;
+    border: solid  1px white;
+    border-radius: 20px 20px 20px 20px;
+        
+
+
+}
+#signUp a{
+
+    font-size:25px;
+    	color:black;
+    text-decoration: underline;
+    
+
+
+}
+#signUp input[type="submit"] {
+	background:#368;
+	color:white;
+	font-family:tahoma;
+	font-weight:bold;
+
+}
+
+</style>
+<script src="signup.js"></script>
+</head>
+<body>
+
+
+<form id="signUpForm"  th:action="@{/addstore}" th:object="${store}"  method="post">
+<div id="signUp">
+	<h2>Add Store</h2>
+	
+    	<label>Store Name :</label><input   th:field="*{name}" type="text"  placeholder="Store Name.." ><br></br>
+	
+	 <label>  Store address:</label>  <input type="text" th:field="*{address}"  placeholder="Store Address.." ><br></br>
+	 <label>Store owner name</label><input   th:field="*{storeowner}" type="text"  placeholder="Store owner  Name.." ><br></br>
+	 <label>
+    Select Store type  
+    </label>
+     <br></br>
+    <select th:field="*{type}">
+    <option value="Sports">Sports</option>
+    <option value="Entertainment" >Entertainment</option>
+    <option value="Clothes" >Clothes</option>
+    <option value="Technology" >Technology</option>
+    <option value="Electronics" >Electronics</option>
+ 
+    </select>  
+	  <br></br>
+	
+    <label>
+    Select Type Of Store  
+    </label>
+    <select th:field="*{type_of_store}">
+    <option value="Normal Store">Normal Store</option>
+    <option value="Online Store" >Online Store</option>
+    </select>
+     <br></br>
+    
+<input  type="submit" value="Addstore"  >
+</div>
+
+ </form>
+
+</body>
+</head>
+</html>
